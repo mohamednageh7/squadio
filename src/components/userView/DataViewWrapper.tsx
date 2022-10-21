@@ -12,12 +12,12 @@ type Props = {};
 export const DataContext = createContext<any>([]);
 const DataViewWrapper = (props: Props) => {
   const [filter, setFilter] = useState<{
-    from: Date | null;
-    to: Date | null;
+    from: Date | null|number;
+    to: Date | null|number;
     interval: "1d"|"1wk"|"1mo";
   }>({
-    from:new Date(),
-    to: new Date(),
+    from:(new Date()).getTime(),
+    to: (new Date()).getTime(),
     interval: "1d",
   });
   const [error, setError] = useState<string | null>(null);
@@ -48,11 +48,11 @@ const DataViewWrapper = (props: Props) => {
   };
 
   const handleFilterData = () => {
-    console.log({filter})
+    console.log(1,{filter})
     return dispatch(
       filterData({
-        period1: 1664917199,
-        period2: 1664917199,
+        period1: 1633381200 , // 1633381200
+        period2: 1664917199 , //1664917199
         interval,
       })
     );

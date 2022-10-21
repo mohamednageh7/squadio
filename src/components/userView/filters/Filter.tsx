@@ -3,7 +3,6 @@ import Grid from "@mui/material/Grid";
 import SelectInput from "../../../coreUI/SelectInput";
 import { selectData } from "./selectData";
 import Button from "@mui/material/Button";
-import { useDispatch } from "react-redux";
 import { DataContext } from "../DataViewWrapper";
 import DatePicker from "../../../coreUI/DatePicker";
 import Typography from "@mui/material/Typography";
@@ -11,9 +10,7 @@ import Typography from "@mui/material/Typography";
 type Props = {};
 
 const Filter: React.FC<Props> = () => {
-  let dispatch = useDispatch();
-
-  const [handleChangeData, handleFilterData, filter,error] =
+  const [handleChangeData, handleFilterData, filter, error] =
     useContext(DataContext);
   return (
     <Grid container justifyContent={"center"} spacing={4}>
@@ -53,28 +50,28 @@ const Filter: React.FC<Props> = () => {
           </Grid>
         )
       )}
-      <Grid item xs={'auto'}>
+      <Grid item xs={"auto"}>
         <DatePicker
           label="from"
           handleChange={handleChangeData}
           data={filter.period1}
         />
       </Grid>
-      <Grid item xs={'auto'}>
+      <Grid item xs={"auto"}>
         <DatePicker
           label="to"
           handleChange={handleChangeData}
           data={filter.period1}
         />
         {error && (
-            <Typography variant="body2" gutterBottom sx={{color:'red'}}>
-       {error}
-      </Typography>
-            )}
+          <Typography variant="body2" gutterBottom sx={{ color: "red" }}>
+            {error}
+          </Typography>
+        )}
       </Grid>
       <Grid
         item
-        xs={'auto'}
+        xs={"auto"}
         display="flex"
         textAlign="center"
         sx={{
@@ -82,7 +79,11 @@ const Filter: React.FC<Props> = () => {
           justifyContent: "flex-end",
         }}
       >
-        <Button variant="contained" onClick={handleFilterData} disabled={!!error}>
+        <Button
+          variant="contained"
+          onClick={handleFilterData}
+          disabled={!!error}
+        >
           Filter
         </Button>
       </Grid>
