@@ -10,7 +10,7 @@ For this project I used "react-apexcharts" because
 ## Notice
 
 I had to create a simple backend server because the Yahoo finance api was giving a cors error.
-I searched for the reason and found it not acceptable to call from the frontend.
+I searched for the reason and found it not allowed to call from the frontend.
 It needs to be called from the server.
 
 I have also used the dates you provided in the example url as default so that you can see live data because not all the time ranges have data.
