@@ -1,4 +1,11 @@
+## Used Packages
 
+For this project I used "react-apexcharts" because
+- it provied alot of other charts that I can use so I can depend on it 
+  for the rest of the projects needs
+- it used by many developer and it's newly updated 
+- it is build to support react 
+- it provied a lot of features that improve the user experience
 ## Available Scripts
 
 In the project directory, you can run:
