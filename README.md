@@ -6,6 +6,17 @@ For this project I used "react-apexcharts" because
 - it used by many developer and it's newly updated 
 - it is build to support react 
 - it provied a lot of features that improve the user experience
+
+## Notice
+
+I have create a simple backend server because Yahoo finance api was giving a cors 
+error which I seach for the reason and found it not alawing to call form frontend
+it need to be called from server.
+
+also I have used the dates you provide in the example url as default so that you can see a live data because not all the time ranges have data
+
+- to run backend server => yarn run dev
+
 ## Available Scripts
 
 In the project directory, you can run:

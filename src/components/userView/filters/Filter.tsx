@@ -54,14 +54,14 @@ const Filter: React.FC<Props> = () => {
         <DatePicker
           label="from"
           handleChange={handleChangeData}
-          data={filter.period1}
+          data={filter.from}
         />
       </Grid>
       <Grid item xs={"auto"}>
         <DatePicker
           label="to"
           handleChange={handleChangeData}
-          data={filter.period1}
+          data={filter.to}
         />
         {error && (
           <Typography variant="body2" gutterBottom sx={{ color: "red" }}>

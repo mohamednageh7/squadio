@@ -14,7 +14,6 @@ export default function (
   const { type, payload } = action;
   switch (type) {
     case GET_FILTER_DATA:
-      console.log({ payload });
       return {
         ...state,
         data: payload,

@@ -16,10 +16,8 @@ export const filterData = (data:FilterData) => async (dispatch: any) => {
   try {
       let urlUpdate = generateUrl(data,url)
     let res = await axios.get(`${process.env.REACT_APP_DB_BASEURL}/finance?url=${urlUpdate}`)
-    console.log({res})
     Papa.parse(res.data.data, {
         complete: function(result:any) {
-            console.log({result:result.data})
             result.data.shift()
             return dispatch({
                 type: GET_FILTER_DATA,

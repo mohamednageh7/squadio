@@ -16,8 +16,8 @@ const DataViewWrapper = (props: Props) => {
     to: Date | null|number;
     interval: "1d"|"1wk"|"1mo";
   }>({
-    from:(new Date()).getTime(),
-    to: (new Date()).getTime(),
+    from:1633381200,
+    to: 1664917199,
     interval: "1d",
   });
   const [error, setError] = useState<string | null>(null);
@@ -48,15 +48,24 @@ const DataViewWrapper = (props: Props) => {
   };
 
   const handleFilterData = () => {
-    console.log(1,{filter})
     return dispatch(
       filterData({
-        period1: 1633381200 , // 1633381200
-        period2: 1664917199 , //1664917199
+        period1: from , // This time range is returning data for testing 1633381200
+        period2: to , //This time range is returning data testing 1664917199
         interval,
       })
     );
   };
+
+  useEffect(() => {
+     dispatch(
+        filterData({
+          period1: from , // This time range is returning data for testing 1633381200
+          period2: to , //This time range is returning data testing 1664917199
+          interval,
+        })
+     )
+  },[])
   let value = useMemo(
     () => [handleChangeData, handleFilterData, filter, error],
     [handleChangeData, handleFilterData, filter, error]
