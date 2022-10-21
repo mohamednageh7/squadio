@@ -1,10 +1,8 @@
 import React, { useEffect, useState, createContext, useMemo } from "react";
 import Grid from "@mui/material/Grid";
 import Filter from "./filters/Filter";
-import UsersData from "./graphData/FilterData";
-import { useSelector, useDispatch } from "react-redux";
+import  {useDispatch } from "react-redux";
 import { filterData } from "../../redux/dataGraph/actions";
-import { filterSelector } from "../../redux/dataGraph/selector";
 import FilterData from "./graphData/FilterData";
 import moment from "moment";
 
@@ -34,7 +32,6 @@ const DataViewWrapper = (props: Props) => {
     }
   }, [from, to]);
 
-  const { data } = useSelector(filterSelector);
   const handleChangeData = (data: object) => {
     if (["from", "to"].includes(Object.keys(data)[0])) {
       data = {
